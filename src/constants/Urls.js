@@ -153,3 +153,13 @@ export const arcUrl2 =
 export const arcUrl3 =
   'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100034653/security?' +
   yesterdayDate;
+
+export const eftUrl1 =
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100127242/security?';
+
+export const eftUrl2 =
+  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/EFT1T.TL?p=EFT1T.TL';
+
+export const eftUrl3 =
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100127242/security?' +
+  yesterdayDateft;
