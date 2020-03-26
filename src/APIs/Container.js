@@ -17,10 +17,13 @@ import { pkgStockData1, pkgStockData2 } from './Pkg';
 import { prfStockData1, prfStockData2 } from './Prf';
 import { eftStockData1, eftStockData2 } from './Eft';
 
-import { OmxIndex } from './Calculations';
+/* import { OmxIndex } from './Calculations'; */
 
 export const HULL = () => {
-  OmxIndex();
+  /*   OmxIndex(); */
+
+  let isLoading = true;
+  /*   if () */
 
   const [lhvStockNr, setlhvStockNr] = useState();
   const [lhvStockYnr, setLhvStockYnr] = useState();
