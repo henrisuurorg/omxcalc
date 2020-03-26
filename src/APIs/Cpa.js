@@ -11,7 +11,7 @@ export const cpaStockData1 = async () => {
     return volume;
   });
 
-  const result2 = await axios.get(bltUrl3).then(res => {
+  const result2 = await axios.get(cpaUrl3).then(res => {
     const $ = cheerio.load(res.data);
     const yesterdayVolume = $(
       '.tablepadding0 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)'

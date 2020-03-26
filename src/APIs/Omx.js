@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import cheerio from 'cheerio';
-
-const OmxLink1 =
-  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/%5EOMXT?p=^OMXT&.tsrc=fin-srch';
+import { OmxUrl1 } from '../constants/Urls';
 
 export const OmxStockData = async () => {
-  const result = await axios.get(OmxLink1).then(res => {
+  const result = await axios.get(OmxUrl1).then(res => {
     const today = new Date();
     const time = today.getHours();
     const isAuctionPeriod = time > 10 && time < 16 ? true : false;

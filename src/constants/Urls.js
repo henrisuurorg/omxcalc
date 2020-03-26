@@ -162,4 +162,4 @@ export const eftUrl2 =
 
 export const eftUrl3 =
   'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100127242/security?' +
-  yesterdayDateft;
+  yesterdayDate;
