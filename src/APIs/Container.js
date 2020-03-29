@@ -23,7 +23,6 @@ export const HULL = () => {
   /*   OmxIndex(); */
 
   let isLoading = true;
-  /*   if () */
 
   const [lhvStockNr, setlhvStockNr] = useState();
   const [lhvStockYnr, setLhvStockYnr] = useState();
@@ -125,7 +124,7 @@ export const HULL = () => {
   const [omxStockOp, setOmxStockOp] = useState();
 
   useEffect(() => {
-    arcStockData1().then(data => {
+    /*    arcStockData1().then(data => {
       setArcStockNr(data[0]);
       setArcStockYnr(data[1]);
     });
@@ -288,7 +287,7 @@ export const HULL = () => {
     OmxStockData().then(data => {
       setOmxStockOp(data[0]);
       setOmxStockP(data[1]);
-    });
+    }); */
   }, []);
 
   const lhv = {
@@ -424,7 +423,7 @@ export const HULL = () => {
     price: omxStockP
   };
 
-  const stocks = [
+  const initialStocks = [
     arc,
     blt,
     cpa,
@@ -440,17 +439,52 @@ export const HULL = () => {
     tal,
     tkm,
     tsm,
-    tve,
-    omx
+    tve
   ];
-  /* 
-    useEffect(() => {
+
+  const [count, setCount] = useState(10);
+  const timer = () => setCount(count - 1);
+
+  let testVal1;
+  let testVal2 = 0;
+
+  const testObj1 = {
+    answer: testVal1,
+    answer2: testVal2
+  };
+  const testObj2 = {
+    answer: testVal1,
+    answer2: testVal2
+  };
+
+  const testAr = [testObj1, testObj2];
+
+  let isScraping = true;
+
+  useEffect(() => {
+    if (!isScraping || count <= 0) return;
+
+    console.log('isScraping1', Boolean(isScraping));
+    console.log('count', count);
+
+    isScraping = !testAr.some(val => val.answer === undefined);
+    console.log('isScraping2', isScraping);
+    const id = setInterval(timer, 300);
+    return () => clearInterval(id);
+  }, [count]);
+
+  /*   useEffect(() => {
+    console.log(initialStocks);
+    console.log(isScraping);
+  }, [isScraping]);
+ */
+  /* useEffect(() => {
     console.log('lhv', lhv);
-  }, [lhvStockDiv]);
+  }, [lhvStockDiv, lhvStockNr, lhvStockOp, lhvStockYnr, lhvStockP]);
 
   useEffect(() => {
     console.log('tal', tal);
-  }, [talStockDiv]);
+  }, [talStockDiv, talStockNr, talStockOp, talStockYnr, talStockP]);
 
   useEffect(() => {
     console.log('tkm', tkm);
@@ -512,5 +546,38 @@ export const HULL = () => {
     console.log('omx', omx);
   }, [omxStockP, omxStockOp]);
  */
-  return <p>{JSON.stringify(stocks)}</p>;
+  return <p>{JSON.stringify(initialStocks)}</p>;
 };
+
+/*   const stocks = initialStocks.map(stock => {
+    if ((stock.dividend = 'N/A')) {
+      stock.dividend = 0;
+    }
+  });
+ */
+
+/*     function checkIfScraping() {
+    if (initialStocks.some(stock => stock.dividend === 'undefined')) {
+      isScraping = true;
+    } else {
+      isScraping = false;
+    }
+  } */
+
+/*   useEffect(() => {
+    setInterval(() => {
+      console.log('interval');
+      if (initialStocks.some(stock => stock.dividend !== 'undefined')) {
+        isScraping = false;
+      }
+    }, 1000);
+  }, []);
+ */
+/*  useEffect(() => {
+    console.log(count);
+    if (count <= 0) {
+      return;
+    }
+    const id = setInterval(timer, 1000);
+    return () => clearInterval(id);
+  }, [count]); */
