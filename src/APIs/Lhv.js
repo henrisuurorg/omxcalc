@@ -3,7 +3,7 @@ import cheerio from 'cheerio';
 import { lhvUrl1, lhvUrl2, lhvUrl3 } from '../constants/Urls';
 
 export const lhvStockData1 = async () => {
-  const result1 = await axios.get(lhvUrl1).then(res => {
+  const result1 = await axios.get(lhvUrl1).then((res) => {
     const $ = cheerio.load(res.data);
     const volume = $(
       '.tablepadding0 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)'
@@ -11,7 +11,7 @@ export const lhvStockData1 = async () => {
     return volume;
   });
 
-  const result2 = await axios.get(lhvUrl3).then(res => {
+  const result2 = await axios.get(lhvUrl3).then((res) => {
     const $ = cheerio.load(res.data);
     const yesterdayVolume = $(
       '.tablepadding0 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)'
@@ -22,10 +22,10 @@ export const lhvStockData1 = async () => {
 };
 
 export const lhvStockData2 = async () => {
-  const result = await axios.get(lhvUrl2).then(res => {
+  const result = await axios.get(lhvUrl2).then((res) => {
     const $ = cheerio.load(res.data);
     const openingPrice = $(
-      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)'
+      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > span:nth-child(1)'
     ).html();
 
     const price = $(

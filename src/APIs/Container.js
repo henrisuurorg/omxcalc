@@ -12,10 +12,11 @@ import { bltStockData1, bltStockData2 } from './Blt';
 import { cpaStockData1, cpaStockData2 } from './Cpa';
 import { eegStockData1, eegStockData2 } from './Eeg';
 import { haeStockData1, haeStockData2 } from './Hae';
-import { ncnStockData1, ncnStockData2 } from './Ncn';
+import { sknStockData1, sknStockData2 } from './Skn';
 import { pkgStockData1, pkgStockData2 } from './Pkg';
 import { prfStockData1, prfStockData2 } from './Prf';
-import { eftStockData1, eftStockData2 } from './Eft';
+import { tpdStockData1, tpdStockData2 } from './Tpd';
+import { ncnStockData1, ncnStockData2 } from './Ncn';
 
 let isScraping = true;
 let isLooping = true;
@@ -93,11 +94,11 @@ export const HULL = () => {
   const [eegStockP, setEegStockP] = useState();
   const [eegStockDiv, setEegStockDiv] = useState();
 
-  const [eftStockNr, setEftStockNr] = useState();
-  const [eftStockYnr, setEftStockYnr] = useState();
-  const [eftStockOp, setEftStockOp] = useState();
-  const [eftStockP, setEftStockP] = useState();
-  const [eftStockDiv, setEftStockDiv] = useState();
+  const [tpdStockNr, setTpdStockNr] = useState();
+  const [tpdStockYnr, setTpdStockYnr] = useState();
+  const [tpdStockOp, setTpdStockOp] = useState();
+  const [tpdStockP, setTpdStockP] = useState();
+  const [tpdStockDiv, setTpdStockDiv] = useState();
 
   const [haeStockNr, setHaeStockNr] = useState();
   const [haeStockYnr, setHaeStockYnr] = useState();
@@ -105,11 +106,11 @@ export const HULL = () => {
   const [haeStockP, setHaeStockP] = useState();
   const [haeStockDiv, setHaeStockDiv] = useState();
 
-  const [ncnStockNr, setNcnStockNr] = useState();
-  const [ncnStockYnr, setNcnStockYnr] = useState();
-  const [ncnStockOp, setNcnStockOp] = useState();
-  const [ncnStockP, setNcnStockP] = useState();
-  const [ncnStockDiv, setNcnStockDiv] = useState();
+  const [sknStockNr, setSknStockNr] = useState();
+  const [sknStockYnr, setSknStockYnr] = useState();
+  const [sknStockOp, setSknStockOp] = useState();
+  const [sknStockP, setSknStockP] = useState();
+  const [sknStockDiv, setSknStockDiv] = useState();
 
   const [pkgStockNr, setPkgStockNr] = useState();
   const [pkgStockYnr, setPkgStockYnr] = useState();
@@ -123,206 +124,226 @@ export const HULL = () => {
   const [prfStockP, setPrfStockP] = useState();
   const [prfStockDiv, setPrfStockDiv] = useState();
 
+  const [ncnStockNr, setNcnStockNr] = useState();
+  const [ncnStockYnr, setNcnStockYnr] = useState();
+  const [ncnStockOp, setNcnStockOp] = useState();
+  const [ncnStockP, setNcnStockP] = useState();
+  const [ncnStockDiv, setNcnStockDiv] = useState();
+
   const [omxStockP, setOmxStockP] = useState();
   const [omxStockOp, setOmxStockOp] = useState();
+  const [omxStockPrevClose, setOmxStockPrevClose] = useState();
 
   useEffect(() => {
-    arcStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    arcStockData1().then(data => {
+      console.log('arc request 1 made');
       setArcStockNr(data[0]);
       setArcStockYnr(data[1]);
     });
-    arcStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    arcStockData2().then(data => {
+      console.log('arc request 2 made');
       setArcStockOp(data[0]);
       setArcStockP(data[1]);
       setArcStockDiv(data[2]);
     });
 
-    bltStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    bltStockData1().then(data => {
+      console.log('blt request 1 made');
       setBltStockNr(data[0]);
       setBltStockYnr(data[1]);
     });
-    bltStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    bltStockData2().then(data => {
+      console.log('blt request 2 made');
       setBltStockOp(data[0]);
       setBltStockP(data[1]);
       setBltStockDiv(data[2]);
     });
 
-    cpaStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    cpaStockData1().then(data => {
+      console.log('cpa request 1 made');
       setCpaStockNr(data[0]);
       setCpaStockYnr(data[1]);
     });
-    cpaStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    cpaStockData2().then(data => {
+      console.log('cpa request 2 made');
       setCpaStockOp(data[0]);
       setCpaStockP(data[1]);
       setCpaStockDiv(data[2]);
     });
 
-    eegStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    eegStockData1().then(data => {
+      console.log('eeg request 1 made');
       setEegStockNr(data[0]);
       setEegStockYnr(data[1]);
     });
-    eegStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    eegStockData2().then(data => {
+      console.log('eeg request 2 made');
       setEegStockOp(data[0]);
       setEegStockP(data[1]);
       setEegStockDiv(data[2]);
     });
 
-    eftStockData1().then((data) => {
-      /*console.log('request 1 made');*/
-      setEftStockNr(data[0]);
-      setEftStockYnr(data[1]);
+    tpdStockData1().then(data => {
+      console.log('tpd request 1 made');
+      setTpdStockNr(data[0]);
+      setTpdStockYnr(data[1]);
     });
-    eftStockData2().then((data) => {
-      /*console.log('request 2 made');*/
-      setEftStockOp(data[0]);
-      setEftStockP(data[1]);
-      setEftStockDiv(data[2]);
+    tpdStockData2().then(data => {
+      console.log('tpd request 2 made');
+      setTpdStockOp(data[0]);
+      setTpdStockP(data[1]);
+      setTpdStockDiv(data[2]);
     });
 
-    haeStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    haeStockData1().then(data => {
+      console.log('hae request 1 made');
       setHaeStockNr(data[0]);
       setHaeStockYnr(data[1]);
     });
-    haeStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    haeStockData2().then(data => {
+      console.log('hae request 2 made');
       setHaeStockOp(data[0]);
       setHaeStockP(data[1]);
       setHaeStockDiv(data[2]);
     });
 
-    ncnStockData1().then((data) => {
-      /*console.log('request 1 made');*/
-      setNcnStockNr(data[0]);
-      setNcnStockYnr(data[1]);
+    sknStockData1().then(data => {
+      console.log('skn request 1 made');
+      setSknStockNr(data[0]);
+      setSknStockYnr(data[1]);
     });
-    ncnStockData2().then((data) => {
-      /*console.log('request 2 made');*/
-      setNcnStockOp(data[0]);
-      setNcnStockP(data[1]);
-      setNcnStockDiv(data[2]);
+    sknStockData2().then(data => {
+      console.log('skn request 2 made');
+      setSknStockOp(data[0]);
+      setSknStockP(data[1]);
+      setSknStockDiv(data[2]);
     });
 
-    pkgStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    pkgStockData1().then(data => {
+      console.log('pkg request 1 made');
       setPkgStockNr(data[0]);
       setPkgStockYnr(data[1]);
     });
-    pkgStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    pkgStockData2().then(data => {
+      console.log('pkg request 2 made');
       setPkgStockOp(data[0]);
       setPkgStockP(data[1]);
       setPkgStockDiv(data[2]);
     });
 
-    prfStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    prfStockData1().then(data => {
+      console.log('prf request 1 made');
       setPrfStockNr(data[0]);
       setPrfStockYnr(data[1]);
     });
-    prfStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    prfStockData2().then(data => {
+      console.log('prf request 2 made');
       setPrfStockOp(data[0]);
       setPrfStockP(data[1]);
       setPrfStockDiv(data[2]);
     });
 
-    sfgStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    sfgStockData1().then(data => {
+      console.log('sfg request 1 made');
       setSfgStockNr(data[0]);
       setSfgStockYnr(data[1]);
     });
-    sfgStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    sfgStockData2().then(data => {
+      console.log('sfg request 2 made');
       setSfgStockOp(data[0]);
       setSfgStockP(data[1]);
       setSfgStockDiv(data[2]);
     });
 
-    tveStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    tveStockData1().then(data => {
+      console.log('tve request 1 made');
       setTveStockNr(data[0]);
       setTveStockYnr(data[1]);
     });
-    tveStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    tveStockData2().then(data => {
+      console.log('tve request 2 made');
       setTveStockOp(data[0]);
       setTveStockP(data[1]);
       setTveStockDiv(data[2]);
     });
 
-    mrkStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    mrkStockData1().then(data => {
+      console.log('mrk request 1 made');
       setMrkStockNr(data[0]);
       setMrkStockYnr(data[1]);
     });
-    mrkStockData2().then((data) => {
-      /*console.log('request 1 made');*/
+    mrkStockData2().then(data => {
+      console.log('mrk request 1 made');
       setMrkStockOp(data[0]);
       setMrkStockP(data[1]);
       setMrkStockDiv(data[2]);
     });
 
-    lhvStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    lhvStockData1().then(data => {
+      console.log('lhv request 1 made');
       setlhvStockNr(data[0]);
       setLhvStockYnr(data[1]);
     });
-    lhvStockData2().then((data) => {
-      /*console.log('request 1 made');*/
+    lhvStockData2().then(data => {
+      console.log('lhv request 1 made');
       setlhvStockOp(data[0]);
       setlhvStockP(data[1]);
       setLhvStockDiv(data[2]);
     });
 
-    talStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    talStockData1().then(data => {
+      console.log('tal request 1 made');
       setTalStockNr(data[0]);
       setTalStockYnr(data[1]);
     });
-    talStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    talStockData2().then(data => {
+      console.log('tal request 2 made');
       setTalStockOp(data[0]);
       setTalStockP(data[1]);
       setTalStockDiv(data[2]);
     });
 
-    tkmStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    tkmStockData1().then(data => {
+      console.log('tkm request 1 made');
       setTkmStockNr(data[0]);
       setTkmStockYnr(data[1]);
     });
-    tkmStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    tkmStockData2().then(data => {
+      console.log('tkm request 2 made');
       setTkmStockOp(data[0]);
       setTkmStockP(data[1]);
       setTkmStockDiv(data[2]);
     });
 
-    tsmStockData1().then((data) => {
-      /*console.log('request 1 made');*/
+    tsmStockData1().then(data => {
+      console.log('tsm request 1 made');
       setTsmStockNr(data[0]);
       setTsmStockYnr(data[1]);
     });
-    tsmStockData2().then((data) => {
-      /*console.log('request 2 made');*/
+    tsmStockData2().then(data => {
+      console.log('tsm request 2 made');
       setTsmStockOp(data[0]);
       setTsmStockP(data[1]);
       setTsmStockDiv(data[2]);
     });
 
-    OmxStockData().then((data) => {
-      /*console.log('request 1 made');*/
+    ncnStockData1().then(data => {
+      console.log('ncn request 1 made');
+      setNcnStockNr(data[0]);
+      setNcnStockYnr(data[1]);
+    });
+    ncnStockData2().then(data => {
+      console.log('ncn request 2 made');
+      setNcnStockOp(data[0]);
+      setNcnStockP(data[1]);
+      setNcnStockDiv(data[2]);
+    });
+
+    OmxStockData().then(data => {
+      console.log('omx request 1 made');
       setOmxStockOp(data[0]);
       setOmxStockP(data[1]);
+      setOmxStockPrevClose(data[2]);
     });
   }, []);
 
@@ -331,7 +352,7 @@ export const HULL = () => {
     volumeYesterday: lhvStockYnr,
     openingPrice: lhvStockOp,
     price: lhvStockP,
-    dividend: lhvStockDiv,
+    dividend: lhvStockDiv
   };
 
   const tal = {
@@ -339,7 +360,7 @@ export const HULL = () => {
     volumeYesterday: talStockYnr,
     openingPrice: talStockOp,
     price: talStockP,
-    dividend: talStockDiv,
+    dividend: talStockDiv
   };
 
   const tkm = {
@@ -347,7 +368,7 @@ export const HULL = () => {
     volumeYesterday: tkmStockYnr,
     openingPrice: tkmStockOp,
     price: tkmStockP,
-    dividend: tkmStockDiv,
+    dividend: tkmStockDiv
   };
 
   const tsm = {
@@ -355,7 +376,7 @@ export const HULL = () => {
     volumeYesterday: tsmStockYnr,
     openingPrice: tsmStockOp,
     price: tsmStockP,
-    dividend: tsmStockDiv,
+    dividend: tsmStockDiv
   };
 
   const mrk = {
@@ -363,7 +384,7 @@ export const HULL = () => {
     volumeYesterday: mrkStockYnr,
     openingPrice: mrkStockOp,
     price: mrkStockP,
-    dividend: mrkStockDiv,
+    dividend: mrkStockDiv
   };
 
   const tve = {
@@ -371,7 +392,7 @@ export const HULL = () => {
     volumeYesterday: tveStockYnr,
     openingPrice: tveStockOp,
     price: tveStockP,
-    dividend: tveStockDiv,
+    dividend: tveStockDiv
   };
 
   const sfg = {
@@ -379,7 +400,7 @@ export const HULL = () => {
     volumeYesterday: sfgStockYnr,
     openingPrice: sfgStockOp,
     price: sfgStockP,
-    dividend: sfgStockDiv,
+    dividend: sfgStockDiv
   };
 
   const arc = {
@@ -387,7 +408,7 @@ export const HULL = () => {
     volumeYesterday: arcStockYnr,
     openingPrice: arcStockOp,
     price: arcStockP,
-    dividend: arcStockDiv,
+    dividend: arcStockDiv
   };
 
   const blt = {
@@ -395,7 +416,7 @@ export const HULL = () => {
     volumeYesterday: bltStockYnr,
     openingPrice: bltStockOp,
     price: bltStockP,
-    dividend: bltStockDiv,
+    dividend: bltStockDiv
   };
 
   const cpa = {
@@ -403,7 +424,7 @@ export const HULL = () => {
     volumeYesterday: cpaStockYnr,
     openingPrice: cpaStockOp,
     price: cpaStockP,
-    dividend: cpaStockDiv,
+    dividend: cpaStockDiv
   };
 
   const eeg = {
@@ -411,15 +432,15 @@ export const HULL = () => {
     volumeYesterday: eegStockYnr,
     openingPrice: eegStockOp,
     price: eegStockP,
-    dividend: eegStockDiv,
+    dividend: eegStockDiv
   };
 
-  const eft = {
-    volume: eftStockNr,
-    volumeYesterday: eftStockYnr,
-    openingPrice: eftStockOp,
-    price: eftStockP,
-    dividend: eftStockDiv,
+  const tpd = {
+    volume: tpdStockNr,
+    volumeYesterday: tpdStockYnr,
+    openingPrice: tpdStockOp,
+    price: tpdStockP,
+    dividend: tpdStockDiv
   };
 
   const hae = {
@@ -427,7 +448,7 @@ export const HULL = () => {
     volumeYesterday: haeStockYnr,
     openingPrice: haeStockOp,
     price: haeStockP,
-    dividend: haeStockDiv,
+    dividend: haeStockDiv
   };
 
   const prf = {
@@ -435,15 +456,15 @@ export const HULL = () => {
     volumeYesterday: prfStockYnr,
     openingPrice: prfStockOp,
     price: prfStockP,
-    dividend: prfStockDiv,
+    dividend: prfStockDiv
   };
 
-  const ncn = {
-    volume: ncnStockNr,
-    volumeYesterday: ncnStockYnr,
-    openingPrice: ncnStockOp,
-    price: ncnStockP,
-    dividend: ncnStockDiv,
+  const skn = {
+    volume: sknStockNr,
+    volumeYesterday: sknStockYnr,
+    openingPrice: sknStockOp,
+    price: sknStockP,
+    dividend: sknStockDiv
   };
 
   const pkg = {
@@ -451,12 +472,21 @@ export const HULL = () => {
     volumeYesterday: pkgStockYnr,
     openingPrice: pkgStockOp,
     price: pkgStockP,
-    dividend: pkgStockDiv,
+    dividend: pkgStockDiv
+  };
+
+  const ncn = {
+    volume: ncnStockNr,
+    volumeYesterday: ncnStockYnr,
+    openingPrice: ncnStockOp,
+    price: ncnStockP,
+    dividend: ncnStockDiv
   };
 
   const omx = {
     openingPrice: omxStockOp,
     price: omxStockP,
+    previousClose: omxStockPrevClose
   };
 
   const stocks = [
@@ -464,18 +494,19 @@ export const HULL = () => {
     blt,
     cpa,
     eeg,
-    eft,
+    tpd,
     hae,
     lhv,
-    mrk,
     ncn,
+    mrk,
+    skn,
     pkg,
     prf,
     sfg,
     tal,
     tkm,
     tsm,
-    tve,
+    tve
   ];
 
   const [count, setCount] = useState(10);
@@ -495,15 +526,19 @@ export const HULL = () => {
   } */
 
   useEffect(() => {
-    if (!isScraping || count <= 0) return;
-    if (stocks.some((stock) => stock.dividend === undefined)) {
+    if (!isScraping || count <= -10) return;
+    if (
+      stocks.some(
+        stock => stock.dividend === undefined || stock.volume === undefined
+      )
+    ) {
       isScraping = true;
     } else {
       isScraping = false;
+      currentState = 'Looping...';
     }
-    currentState = 'Looping...';
     console.log('Is scraping: ', isScraping);
-    const id = setInterval(timer, 3000);
+    const id = setInterval(timer, 1000);
     return () => clearInterval(id);
   }, [count]);
 
@@ -546,16 +581,35 @@ export const HULL = () => {
     isDivising = false;
   }
 
-  if (!isScraping && !isDivising && !isLooping) {
+  if (
+    !isScraping &&
+    !isDivising &&
+    !isLooping &&
+    omxStockPrevClose != undefined
+  ) {
     omxIndex =
-      ((omxIndexSummation / omxIndexDivisor) *
-        parseFloat(omx.openingPrice.replace(' ', '').replace(',', ''))) /
-      1.103;
+      (omxIndexSummation / omxIndexDivisor) *
+      parseFloat(omx.previousClose.replace('.', ',').replace(',', ''));
+
+    console.log('sum/div:', omxIndexSummation / omxIndexDivisor);
+
+    console.log(
+      'openingPrice:',
+      omx.openingPrice.replace('.', ',').replace(',', '')
+    );
+    console.log(
+      'prevClose:',
+      omx.previousClose.replace('.', ',').replace(',', '')
+    );
     console.log('Calculated value:', omxIndex);
-    console.log('Real value:', omx.price);
+    console.log('Real value:', omx.price.replace('.', ',').replace(',', ''));
     isCalculating = false;
-    currentState = omxIndex;
+    currentState = omxIndex.toFixed(2);
   }
 
-  return <p>{currentState}</p>;
+  return <h1>{currentState}</h1>;
 };
+
+/* parseFloat(omx.openingPrice.replace(' ', '').replace(',', ''))) /
+      (parseFloat(omx.openingPrice.replace(' ', '').replace(',', '')) /
+        parseFloat(omx.previousClose.replace(' ', '').replace(',', ''))); */

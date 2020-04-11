@@ -32,7 +32,7 @@ export const talUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/TAL1T.TL?p=TAL1T.TL';
 
 export const talUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100004466/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100004466/security?date=' +
   yesterdayDate;
 
 export const tsmUrl1 =
@@ -42,7 +42,7 @@ export const tsmUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/TSM1T.TL?p=TSM1T.TL';
 
 export const tsmUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100021635/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100021635/security?date=' +
   yesterdayDate;
 
 export const mrkUrl1 =
@@ -52,7 +52,7 @@ export const mrkUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/MRK1T.TL?p=MRK1T.TL';
 
 export const mrkUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100098328/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100098328/security?date=' +
   yesterdayDate;
 
 export const tveUrl1 =
@@ -62,7 +62,7 @@ export const tveUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/TVEAT.TL?p=TVEAT.TL';
 
 export const tveUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100026436/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100026436/security?date=' +
   yesterdayDate;
 
 export const sfgUrl1 =
@@ -72,7 +72,7 @@ export const sfgUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/SFG1T.TL?p=SFG1T.TL';
 
 export const sfgUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100001751/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100001751/security?date=' +
   yesterdayDate;
 export const prfUrl1 =
   'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100101031/security?';
@@ -81,7 +81,7 @@ export const prfUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/PRF1T.TL?p=PRF1T.TL';
 
 export const prfUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100101031/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100101031/security?date=' +
   yesterdayDate;
 
 export const pkgUrl1 =
@@ -91,27 +91,27 @@ export const pkgUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/PKG1T.TL?p=PKG1T.TL';
 
 export const pkgUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100006040/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100006040/security?date=' +
   yesterdayDate;
 
-export const ncnUrl1 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100039496/security?';
+export const sknUrl1 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100092503/security?';
 
-export const ncnUrl2 =
-  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/NCN1T.TL?p=NCN1T.TL';
+export const sknUrl2 =
+  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/SKN1T.TL?p=SKN1T.TL';
 
-export const ncnUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100039496/security?' +
+export const sknUrl3 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100092503/security?date=' +
   yesterdayDate;
 
 export const haeUrl1 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100004250/security?';
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100004250/security?';
 
 export const haeUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/HAE1T.TL?p=HAE1T.TL';
 
 export const haeUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100004250/security?' +
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100004250/security?' +
   yesterdayDate;
 
 export const eegUrl1 =
@@ -121,7 +121,7 @@ export const eegUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/EEG1T.TL?p=EEG1T.TL';
 
 export const eegUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100016965/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100016965/security?date=' +
   yesterdayDate;
 
 export const bltUrl1 =
@@ -131,7 +131,7 @@ export const bltUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/BLT1T.TL?p=BLT1T.TL';
 
 export const bltUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100145616/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100145616/security?date=' +
   yesterdayDate;
 
 export const cpaUrl1 =
@@ -141,7 +141,7 @@ export const cpaUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/CPA1T.TL?p=CPA1T.TL';
 
 export const cpaUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100007857/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100007857/security?date=' +
   yesterdayDate;
 
 export const arcUrl1 =
@@ -151,15 +151,25 @@ export const arcUrl2 =
   'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/ARC1T.TL?p=ARC1T.TL';
 
 export const arcUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100034653/security?' +
+  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100034653/security?date=' +
   yesterdayDate;
 
-export const eftUrl1 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100127242/security?';
+export const tpdUrl1 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100003443/security?';
 
-export const eftUrl2 =
-  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/EFT1T.TL?p=EFT1T.TL';
+export const tpdUrl2 =
+  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/TPD1T.TL?p=TPD1T.TL';
 
-export const eftUrl3 =
-  'https://www.nasdaqbaltic.com/statistics/et/instrument/EE3100127242/security?' +
+export const tpdUrl3 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100003443/security?date=' +
+  yesterdayDate;
+
+export const ncnUrl1 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100039496/security?';
+
+export const ncnUrl2 =
+  'https://cors-anywhere.herokuapp.com/https://finance.yahoo.com/quote/NCN1T.TL?p=NCN1T.TL';
+
+export const ncnUrl3 =
+  'https://nasdaqbaltic.com/statistics/et/instrument/EE3100039496/security?date=' +
   yesterdayDate;

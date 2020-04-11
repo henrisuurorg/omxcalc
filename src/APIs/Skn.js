@@ -1,9 +1,9 @@
 import axios from 'axios';
 import cheerio from 'cheerio';
-import { eftUrl1, eftUrl2, eftUrl3 } from '../constants/Urls';
+import { sknUrl1, sknUrl2, sknUrl3 } from '../constants/Urls';
 
-export const eftStockData1 = async () => {
-  const result1 = await axios.get(eftUrl1).then(res => {
+export const sknStockData1 = async () => {
+  const result1 = await axios.get(sknUrl1).then(res => {
     const $ = cheerio.load(res.data);
     const volume = $(
       '.tablepadding0 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)'
@@ -11,7 +11,7 @@ export const eftStockData1 = async () => {
     return volume;
   });
 
-  const result2 = await axios.get(eftUrl3).then(res => {
+  const result2 = await axios.get(sknUrl3).then(res => {
     const $ = cheerio.load(res.data);
     const yesterdayVolume = $(
       '.tablepadding0 > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)'
@@ -21,11 +21,11 @@ export const eftStockData1 = async () => {
   return [result1, result2];
 };
 
-export const eftStockData2 = async () => {
-  const result = await axios.get(eftUrl2).then(res => {
+export const sknStockData2 = async () => {
+  const result = await axios.get(sknUrl2).then(res => {
     const $ = cheerio.load(res.data);
     const openingPrice = $(
-      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)'
+      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > span:nth-child(1)'
     ).html();
 
     const price = $(

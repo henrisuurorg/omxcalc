@@ -25,7 +25,7 @@ export const ncnStockData2 = async () => {
   const result = await axios.get(ncnUrl2).then(res => {
     const $ = cheerio.load(res.data);
     const openingPrice = $(
-      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)'
+      'table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > span:nth-child(1)'
     ).html();
 
     const price = $(
