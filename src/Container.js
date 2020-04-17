@@ -1,31 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { OmxStockData } from './Omx';
-import { lhvStockData1, lhvStockData2 } from './Lhv';
-import { talStockData1, talStockData2 } from './Tal';
-import { tkmStockData1, tkmStockData2 } from './Tkm';
-import { tsmStockData1, tsmStockData2 } from './Tsm';
-import { mrkStockData1, mrkStockData2 } from './Mrk';
-import { tveStockData1, tveStockData2 } from './Tve';
-import { sfgStockData1, sfgStockData2 } from './Sfg';
-import { arcStockData1, arcStockData2 } from './Arc';
-import { bltStockData1, bltStockData2 } from './Blt';
-import { cpaStockData1, cpaStockData2 } from './Cpa';
-import { eegStockData1, eegStockData2 } from './Eeg';
-import { haeStockData1, haeStockData2 } from './Hae';
-import { sknStockData1, sknStockData2 } from './Skn';
-import { pkgStockData1, pkgStockData2 } from './Pkg';
-import { prfStockData1, prfStockData2 } from './Prf';
-import { tpdStockData1, tpdStockData2 } from './Tpd';
-import { ncnStockData1, ncnStockData2 } from './Ncn';
+import { OmxStockData } from './APIs/Omx';
+import { lhvStockData1, lhvStockData2 } from './APIs/Lhv';
+import { talStockData1, talStockData2 } from './APIs/Tal';
+import { tkmStockData1, tkmStockData2 } from './APIs/Tkm';
+import { tsmStockData1, tsmStockData2 } from './APIs/Tsm';
+import { mrkStockData1, mrkStockData2 } from './APIs/Mrk';
+import { tveStockData1, tveStockData2 } from './APIs/Tve';
+import { sfgStockData1, sfgStockData2 } from './APIs/Sfg';
+import { arcStockData1, arcStockData2 } from './APIs/Arc';
+import { bltStockData1, bltStockData2 } from './APIs/Blt';
+import { cpaStockData1, cpaStockData2 } from './APIs/Cpa';
+import { eegStockData1, eegStockData2 } from './APIs/Eeg';
+import { haeStockData1, haeStockData2 } from './APIs/Hae';
+import { sknStockData1, sknStockData2 } from './APIs/Skn';
+import { pkgStockData1, pkgStockData2 } from './APIs/Pkg';
+import { prfStockData1, prfStockData2 } from './APIs/Prf';
+import { tpdStockData1, tpdStockData2 } from './APIs/Tpd';
+import { ncnStockData1, ncnStockData2 } from './APIs/Ncn';
+import './Style.css';
+import { Instrument } from './Instruments';
+import { EquationUsed } from './EquationUsed';
+import { Sources } from './Sources';
 
 let isScraping = true;
 let isLooping = true;
 let isDivising = true;
 let isCalculating = true;
+let isDone = false;
 let currentState = 'Scraping...';
 let omxIndex;
 let omxIndexDivisor;
 let omxIndexSummation;
+let valChange;
+let differnce;
+let calAccuracy;
 
 export const HULL = () => {
   const [lhvStockNr, setlhvStockNr] = useState();
@@ -133,217 +141,222 @@ export const HULL = () => {
   const [omxStockP, setOmxStockP] = useState();
   const [omxStockOp, setOmxStockOp] = useState();
   const [omxStockPrevClose, setOmxStockPrevClose] = useState();
+  const [omxTime, setOmxTime] = useState();
+
+  const [count, setCount] = useState(10);
+  const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
-    arcStockData1().then(data => {
+    arcStockData1().then((data) => {
       console.log('arc request 1 made');
       setArcStockNr(data[0]);
       setArcStockYnr(data[1]);
     });
-    arcStockData2().then(data => {
+    arcStockData2().then((data) => {
       console.log('arc request 2 made');
       setArcStockOp(data[0]);
       setArcStockP(data[1]);
       setArcStockDiv(data[2]);
     });
 
-    bltStockData1().then(data => {
+    bltStockData1().then((data) => {
       console.log('blt request 1 made');
       setBltStockNr(data[0]);
       setBltStockYnr(data[1]);
     });
-    bltStockData2().then(data => {
+    bltStockData2().then((data) => {
       console.log('blt request 2 made');
       setBltStockOp(data[0]);
       setBltStockP(data[1]);
       setBltStockDiv(data[2]);
     });
 
-    cpaStockData1().then(data => {
+    cpaStockData1().then((data) => {
       console.log('cpa request 1 made');
       setCpaStockNr(data[0]);
       setCpaStockYnr(data[1]);
     });
-    cpaStockData2().then(data => {
+    cpaStockData2().then((data) => {
       console.log('cpa request 2 made');
       setCpaStockOp(data[0]);
       setCpaStockP(data[1]);
       setCpaStockDiv(data[2]);
     });
 
-    eegStockData1().then(data => {
+    eegStockData1().then((data) => {
       console.log('eeg request 1 made');
       setEegStockNr(data[0]);
       setEegStockYnr(data[1]);
     });
-    eegStockData2().then(data => {
+    eegStockData2().then((data) => {
       console.log('eeg request 2 made');
       setEegStockOp(data[0]);
       setEegStockP(data[1]);
       setEegStockDiv(data[2]);
     });
 
-    tpdStockData1().then(data => {
+    tpdStockData1().then((data) => {
       console.log('tpd request 1 made');
       setTpdStockNr(data[0]);
       setTpdStockYnr(data[1]);
     });
-    tpdStockData2().then(data => {
+    tpdStockData2().then((data) => {
       console.log('tpd request 2 made');
       setTpdStockOp(data[0]);
       setTpdStockP(data[1]);
       setTpdStockDiv(data[2]);
     });
 
-    haeStockData1().then(data => {
+    haeStockData1().then((data) => {
       console.log('hae request 1 made');
       setHaeStockNr(data[0]);
       setHaeStockYnr(data[1]);
     });
-    haeStockData2().then(data => {
+    haeStockData2().then((data) => {
       console.log('hae request 2 made');
       setHaeStockOp(data[0]);
       setHaeStockP(data[1]);
       setHaeStockDiv(data[2]);
     });
 
-    sknStockData1().then(data => {
+    sknStockData1().then((data) => {
       console.log('skn request 1 made');
       setSknStockNr(data[0]);
       setSknStockYnr(data[1]);
     });
-    sknStockData2().then(data => {
+    sknStockData2().then((data) => {
       console.log('skn request 2 made');
       setSknStockOp(data[0]);
       setSknStockP(data[1]);
       setSknStockDiv(data[2]);
     });
 
-    pkgStockData1().then(data => {
+    pkgStockData1().then((data) => {
       console.log('pkg request 1 made');
       setPkgStockNr(data[0]);
       setPkgStockYnr(data[1]);
     });
-    pkgStockData2().then(data => {
+    pkgStockData2().then((data) => {
       console.log('pkg request 2 made');
       setPkgStockOp(data[0]);
       setPkgStockP(data[1]);
       setPkgStockDiv(data[2]);
     });
 
-    prfStockData1().then(data => {
+    prfStockData1().then((data) => {
       console.log('prf request 1 made');
       setPrfStockNr(data[0]);
       setPrfStockYnr(data[1]);
     });
-    prfStockData2().then(data => {
+    prfStockData2().then((data) => {
       console.log('prf request 2 made');
       setPrfStockOp(data[0]);
       setPrfStockP(data[1]);
       setPrfStockDiv(data[2]);
     });
 
-    sfgStockData1().then(data => {
+    sfgStockData1().then((data) => {
       console.log('sfg request 1 made');
       setSfgStockNr(data[0]);
       setSfgStockYnr(data[1]);
     });
-    sfgStockData2().then(data => {
+    sfgStockData2().then((data) => {
       console.log('sfg request 2 made');
       setSfgStockOp(data[0]);
       setSfgStockP(data[1]);
       setSfgStockDiv(data[2]);
     });
 
-    tveStockData1().then(data => {
+    tveStockData1().then((data) => {
       console.log('tve request 1 made');
       setTveStockNr(data[0]);
       setTveStockYnr(data[1]);
     });
-    tveStockData2().then(data => {
+    tveStockData2().then((data) => {
       console.log('tve request 2 made');
       setTveStockOp(data[0]);
       setTveStockP(data[1]);
       setTveStockDiv(data[2]);
     });
 
-    mrkStockData1().then(data => {
+    mrkStockData1().then((data) => {
       console.log('mrk request 1 made');
       setMrkStockNr(data[0]);
       setMrkStockYnr(data[1]);
     });
-    mrkStockData2().then(data => {
+    mrkStockData2().then((data) => {
       console.log('mrk request 1 made');
       setMrkStockOp(data[0]);
       setMrkStockP(data[1]);
       setMrkStockDiv(data[2]);
     });
 
-    lhvStockData1().then(data => {
+    lhvStockData1().then((data) => {
       console.log('lhv request 1 made');
       setlhvStockNr(data[0]);
       setLhvStockYnr(data[1]);
     });
-    lhvStockData2().then(data => {
+    lhvStockData2().then((data) => {
       console.log('lhv request 1 made');
       setlhvStockOp(data[0]);
       setlhvStockP(data[1]);
       setLhvStockDiv(data[2]);
     });
 
-    talStockData1().then(data => {
+    talStockData1().then((data) => {
       console.log('tal request 1 made');
       setTalStockNr(data[0]);
       setTalStockYnr(data[1]);
     });
-    talStockData2().then(data => {
+    talStockData2().then((data) => {
       console.log('tal request 2 made');
       setTalStockOp(data[0]);
       setTalStockP(data[1]);
       setTalStockDiv(data[2]);
     });
 
-    tkmStockData1().then(data => {
+    tkmStockData1().then((data) => {
       console.log('tkm request 1 made');
       setTkmStockNr(data[0]);
       setTkmStockYnr(data[1]);
     });
-    tkmStockData2().then(data => {
+    tkmStockData2().then((data) => {
       console.log('tkm request 2 made');
       setTkmStockOp(data[0]);
       setTkmStockP(data[1]);
       setTkmStockDiv(data[2]);
     });
 
-    tsmStockData1().then(data => {
+    tsmStockData1().then((data) => {
       console.log('tsm request 1 made');
       setTsmStockNr(data[0]);
       setTsmStockYnr(data[1]);
     });
-    tsmStockData2().then(data => {
+    tsmStockData2().then((data) => {
       console.log('tsm request 2 made');
       setTsmStockOp(data[0]);
       setTsmStockP(data[1]);
       setTsmStockDiv(data[2]);
     });
 
-    ncnStockData1().then(data => {
+    ncnStockData1().then((data) => {
       console.log('ncn request 1 made');
       setNcnStockNr(data[0]);
       setNcnStockYnr(data[1]);
     });
-    ncnStockData2().then(data => {
+    ncnStockData2().then((data) => {
       console.log('ncn request 2 made');
       setNcnStockOp(data[0]);
       setNcnStockP(data[1]);
       setNcnStockDiv(data[2]);
     });
 
-    OmxStockData().then(data => {
+    OmxStockData().then((data) => {
       console.log('omx request 1 made');
       setOmxStockOp(data[0]);
       setOmxStockP(data[1]);
       setOmxStockPrevClose(data[2]);
+      setOmxTime(data[3]);
     });
   }, []);
 
@@ -352,7 +365,7 @@ export const HULL = () => {
     volumeYesterday: lhvStockYnr,
     openingPrice: lhvStockOp,
     price: lhvStockP,
-    dividend: lhvStockDiv
+    dividend: lhvStockDiv,
   };
 
   const tal = {
@@ -360,7 +373,7 @@ export const HULL = () => {
     volumeYesterday: talStockYnr,
     openingPrice: talStockOp,
     price: talStockP,
-    dividend: talStockDiv
+    dividend: talStockDiv,
   };
 
   const tkm = {
@@ -368,7 +381,7 @@ export const HULL = () => {
     volumeYesterday: tkmStockYnr,
     openingPrice: tkmStockOp,
     price: tkmStockP,
-    dividend: tkmStockDiv
+    dividend: tkmStockDiv,
   };
 
   const tsm = {
@@ -376,7 +389,7 @@ export const HULL = () => {
     volumeYesterday: tsmStockYnr,
     openingPrice: tsmStockOp,
     price: tsmStockP,
-    dividend: tsmStockDiv
+    dividend: tsmStockDiv,
   };
 
   const mrk = {
@@ -384,7 +397,7 @@ export const HULL = () => {
     volumeYesterday: mrkStockYnr,
     openingPrice: mrkStockOp,
     price: mrkStockP,
-    dividend: mrkStockDiv
+    dividend: mrkStockDiv,
   };
 
   const tve = {
@@ -392,7 +405,7 @@ export const HULL = () => {
     volumeYesterday: tveStockYnr,
     openingPrice: tveStockOp,
     price: tveStockP,
-    dividend: tveStockDiv
+    dividend: tveStockDiv,
   };
 
   const sfg = {
@@ -400,7 +413,7 @@ export const HULL = () => {
     volumeYesterday: sfgStockYnr,
     openingPrice: sfgStockOp,
     price: sfgStockP,
-    dividend: sfgStockDiv
+    dividend: sfgStockDiv,
   };
 
   const arc = {
@@ -408,7 +421,7 @@ export const HULL = () => {
     volumeYesterday: arcStockYnr,
     openingPrice: arcStockOp,
     price: arcStockP,
-    dividend: arcStockDiv
+    dividend: arcStockDiv,
   };
 
   const blt = {
@@ -416,7 +429,7 @@ export const HULL = () => {
     volumeYesterday: bltStockYnr,
     openingPrice: bltStockOp,
     price: bltStockP,
-    dividend: bltStockDiv
+    dividend: bltStockDiv,
   };
 
   const cpa = {
@@ -424,7 +437,7 @@ export const HULL = () => {
     volumeYesterday: cpaStockYnr,
     openingPrice: cpaStockOp,
     price: cpaStockP,
-    dividend: cpaStockDiv
+    dividend: cpaStockDiv,
   };
 
   const eeg = {
@@ -432,7 +445,7 @@ export const HULL = () => {
     volumeYesterday: eegStockYnr,
     openingPrice: eegStockOp,
     price: eegStockP,
-    dividend: eegStockDiv
+    dividend: eegStockDiv,
   };
 
   const tpd = {
@@ -440,7 +453,7 @@ export const HULL = () => {
     volumeYesterday: tpdStockYnr,
     openingPrice: tpdStockOp,
     price: tpdStockP,
-    dividend: tpdStockDiv
+    dividend: tpdStockDiv,
   };
 
   const hae = {
@@ -448,7 +461,7 @@ export const HULL = () => {
     volumeYesterday: haeStockYnr,
     openingPrice: haeStockOp,
     price: haeStockP,
-    dividend: haeStockDiv
+    dividend: haeStockDiv,
   };
 
   const prf = {
@@ -456,7 +469,7 @@ export const HULL = () => {
     volumeYesterday: prfStockYnr,
     openingPrice: prfStockOp,
     price: prfStockP,
-    dividend: prfStockDiv
+    dividend: prfStockDiv,
   };
 
   const skn = {
@@ -464,7 +477,7 @@ export const HULL = () => {
     volumeYesterday: sknStockYnr,
     openingPrice: sknStockOp,
     price: sknStockP,
-    dividend: sknStockDiv
+    dividend: sknStockDiv,
   };
 
   const pkg = {
@@ -472,7 +485,7 @@ export const HULL = () => {
     volumeYesterday: pkgStockYnr,
     openingPrice: pkgStockOp,
     price: pkgStockP,
-    dividend: pkgStockDiv
+    dividend: pkgStockDiv,
   };
 
   const ncn = {
@@ -480,13 +493,14 @@ export const HULL = () => {
     volumeYesterday: ncnStockYnr,
     openingPrice: ncnStockOp,
     price: ncnStockP,
-    dividend: ncnStockDiv
+    dividend: ncnStockDiv,
   };
 
   const omx = {
     openingPrice: omxStockOp,
     price: omxStockP,
-    previousClose: omxStockPrevClose
+    previousClose: omxStockPrevClose,
+    time: omxTime,
   };
 
   const stocks = [
@@ -506,30 +520,17 @@ export const HULL = () => {
     tal,
     tkm,
     tsm,
-    tve
+    tve,
   ];
 
-  const [count, setCount] = useState(10);
   const timer = () => setCount(count - 1);
-
-  /*   function jono() {
-    console.log('nanana');
-    if (isScraping) {
-      currentState = 'Scraping...';
-    } else if (isLooping) {
-      currentState = 'Looping...';
-    } else if (isDivising && isCalculating) {
-      currentState = 'Calculating...';
-    } else {
-      currentState = omxIndex;
-    }
-  } */
+  const timeToComplete = () => setSeconds(seconds + 1);
 
   useEffect(() => {
     if (!isScraping || count <= -10) return;
     if (
       stocks.some(
-        stock => stock.dividend === undefined || stock.volume === undefined
+        (stock) => stock.dividend === undefined || stock.volume === undefined
       )
     ) {
       isScraping = true;
@@ -538,8 +539,8 @@ export const HULL = () => {
       currentState = 'Looping...';
     }
     console.log('Is scraping: ', isScraping);
-    const id = setInterval(timer, 1000);
-    return () => clearInterval(id);
+    const id2 = setInterval(timer, 1000);
+    return () => clearInterval(id2);
   }, [count]);
 
   function noNa() {
@@ -560,6 +561,33 @@ export const HULL = () => {
     console.log('stocks afer changing:', stocks);
     currentState = 'Calculating...';
     return;
+  }
+
+  function valueChange() {
+    differnce =
+      parseFloat(omx.previousClose.replace(',', '')) -
+      parseFloat(omx.price.replace(',', ''));
+
+    console.log('test', parseFloat(omx.price.replace(',', '')));
+    console.log('differnce', differnce);
+    const difInPercent =
+      (differnce / parseFloat(omx.previousClose.replace(',', ''))) * 100;
+    valChange =
+      differnce >= 0
+        ? '-' +
+          Math.abs(differnce.toFixed(2)) +
+          '(' +
+          '-' +
+          Math.abs(difInPercent.toFixed(2)) +
+          '%' +
+          ')'
+        : '+' +
+          Math.abs(differnce.toFixed(2)) +
+          '(' +
+          '+' +
+          Math.abs(difInPercent.toFixed(2)) +
+          '%' +
+          ')';
   }
 
   if (!isScraping) {
@@ -588,28 +616,83 @@ export const HULL = () => {
     omxStockPrevClose != undefined
   ) {
     omxIndex =
-      (omxIndexSummation / omxIndexDivisor) *
-      parseFloat(omx.previousClose.replace('.', ',').replace(',', ''));
+      ((omxIndexSummation / omxIndexDivisor) *
+        parseFloat(omx.previousClose.replace(',', ''))) /
+      1.1;
+    valueChange();
 
-    console.log('sum/div:', omxIndexSummation / omxIndexDivisor);
-
-    console.log(
-      'openingPrice:',
-      omx.openingPrice.replace('.', ',').replace(',', '')
-    );
-    console.log(
-      'prevClose:',
-      omx.previousClose.replace('.', ',').replace(',', '')
-    );
-    console.log('Calculated value:', omxIndex);
-    console.log('Real value:', omx.price.replace('.', ',').replace(',', ''));
     isCalculating = false;
     currentState = omxIndex.toFixed(2);
+    calAccuracy = (
+      100 -
+      (Math.abs(omxIndex - parseFloat(omx.price.replace(',', ''))) * 100) /
+        parseFloat(omx.price.replace(',', ''))
+    ).toFixed(2);
   }
 
-  return <h1>{currentState}</h1>;
+  useEffect(() => {
+    if (!isCalculating || isDone) return;
+    let id1 = setInterval(timeToComplete, 100);
+    return () => {
+      clearInterval(id1);
+      isDone = true;
+    };
+  }, [seconds]);
+
+  return (
+    <div className='container'>
+      <div className='IndexVal'>
+        <h1 className='tekst2'>
+          <b>OMX Tallinn_GI (^OMXT)</b>
+        </h1>
+        <p className='tekst3'>
+          Tallinn - Tallinn Real Time Price. Currency in EUR
+        </p>
+        <div className='hinnamuutus'>
+          <h2 className='tekst1'>
+            <b>{currentState} </b>
+          </h2>
+          <h2 className={differnce >= 0 ? 'punane' : 'roheline'}>
+            {valChange}
+          </h2>
+        </div>
+        <p className='tekst3'>{omx.time}</p>
+      </div>
+
+      <div className='CalculationDetails'>
+        <h2 className='tekst4'>Calculation details</h2>
+        <div className='calSpecifics'>
+          <div className='calcDet'>
+            <h3 className='tekst5 justifyStart'>Accuracy</h3>
+            <h3 className='tekst5 justifyEnd'>
+              <b>{calAccuracy}%</b>
+            </h3>
+          </div>
+          <div className='calcDet'>
+            <h3 className='tekst5 justifyStart'>Time to complete</h3>
+            <h3 className='tekst5 justifyEnd'>
+              <b>{seconds / 10}s</b>
+            </h3>
+          </div>
+          <div className='calcDet'>
+            <h3 className='tekst5 justifyStart'>Operations</h3>
+            <h3 className='tekst5 justifyEnd'>
+              <b>93</b>
+            </h3>
+          </div>
+          <div className='calcDet'>
+            <h3 className='tekst5 justifyStart'>Pages visited</h3>
+            <h3 className='tekst5 justifyEnd'>
+              <b>52</b>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <EquationUsed />
+      <Instrument />
+      <Sources />
+    </div>
+  );
 };
 
-/* parseFloat(omx.openingPrice.replace(' ', '').replace(',', ''))) /
-      (parseFloat(omx.openingPrice.replace(' ', '').replace(',', '')) /
-        parseFloat(omx.previousClose.replace(' ', '').replace(',', ''))); */
+/* <h3 className='teks6'>Parameters used:</h3> */
