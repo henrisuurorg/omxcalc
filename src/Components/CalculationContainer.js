@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { OmxStockData } from './APIs/Omx';
-import { lhvStockData1, lhvStockData2 } from './APIs/Lhv';
-import { talStockData1, talStockData2 } from './APIs/Tal';
-import { tkmStockData1, tkmStockData2 } from './APIs/Tkm';
-import { tsmStockData1, tsmStockData2 } from './APIs/Tsm';
-import { mrkStockData1, mrkStockData2 } from './APIs/Mrk';
-import { tveStockData1, tveStockData2 } from './APIs/Tve';
-import { sfgStockData1, sfgStockData2 } from './APIs/Sfg';
-import { arcStockData1, arcStockData2 } from './APIs/Arc';
-import { bltStockData1, bltStockData2 } from './APIs/Blt';
-import { cpaStockData1, cpaStockData2 } from './APIs/Cpa';
-import { eegStockData1, eegStockData2 } from './APIs/Eeg';
-import { haeStockData1, haeStockData2 } from './APIs/Hae';
-import { sknStockData1, sknStockData2 } from './APIs/Skn';
-import { pkgStockData1, pkgStockData2 } from './APIs/Pkg';
-import { prfStockData1, prfStockData2 } from './APIs/Prf';
-import { tpdStockData1, tpdStockData2 } from './APIs/Tpd';
-import { ncnStockData1, ncnStockData2 } from './APIs/Ncn';
-import './Style.css';
+import '../Style.css';
+
+import { OmxStockData } from '../APIs/Omx';
+import { lhvStockData1, lhvStockData2 } from '../APIs/Lhv';
+import { talStockData1, talStockData2 } from '../APIs/Tal';
+import { tkmStockData1, tkmStockData2 } from '../APIs/Tkm';
+import { tsmStockData1, tsmStockData2 } from '../APIs/Tsm';
+import { mrkStockData1, mrkStockData2 } from '../APIs/Mrk';
+import { tveStockData1, tveStockData2 } from '../APIs/Tve';
+import { sfgStockData1, sfgStockData2 } from '../APIs/Sfg';
+import { arcStockData1, arcStockData2 } from '../APIs/Arc';
+import { bltStockData1, bltStockData2 } from '../APIs/Blt';
+import { cpaStockData1, cpaStockData2 } from '../APIs/Cpa';
+import { eegStockData1, eegStockData2 } from '../APIs/Eeg';
+import { haeStockData1, haeStockData2 } from '../APIs/Hae';
+import { sknStockData1, sknStockData2 } from '../APIs/Skn';
+import { pkgStockData1, pkgStockData2 } from '../APIs/Pkg';
+import { prfStockData1, prfStockData2 } from '../APIs/Prf';
+import { tpdStockData1, tpdStockData2 } from '../APIs/Tpd';
+import { ncnStockData1, ncnStockData2 } from '../APIs/Ncn';
+
 import { Instrument } from './Instruments';
 import { EquationUsed } from './EquationUsed';
 import { Sources } from './Sources';
-import { type } from 'os';
 
 let isScraping = true;
 let isLooping = true;
 let isDivising = true;
 let isCalculating = true;
-let isDone = false;
 let currentState = 'Scraping...';
 let omxIndex;
 let omxIndexDivisor;
@@ -37,7 +37,12 @@ let differnce;
 let calAccuracy;
 let secInterval;
 
-export const HULL = () => {
+export const CalculationContainer = () => {
+  /* 
+    Each stock has 5 State components
+    Nr = quantity; Ynr = quantity yesterday; Op = opening price; P = price; Div = dividend
+  */
+
   const [lhvStockNr, setlhvStockNr] = useState();
   const [lhvStockYnr, setLhvStockYnr] = useState();
   const [lhvStockOp, setlhvStockOp] = useState();
@@ -148,219 +153,192 @@ export const HULL = () => {
   const [count, setCount] = useState(10);
   const [seconds, setSeconds] = useState(0);
 
+  /* 
+    Makes requests with axios and sets the gathered data as state 
+  */
+
   useEffect(() => {
     arcStockData1().then((data) => {
-      console.log('arc request 1 made');
       setArcStockNr(data[0]);
       setArcStockYnr(data[1]);
     });
     arcStockData2().then((data) => {
-      console.log('arc request 2 made');
       setArcStockOp(data[0]);
       setArcStockP(data[1]);
       setArcStockDiv(data[2]);
     });
 
     bltStockData1().then((data) => {
-      console.log('blt request 1 made');
       setBltStockNr(data[0]);
       setBltStockYnr(data[1]);
     });
     bltStockData2().then((data) => {
-      console.log('blt request 2 made');
       setBltStockOp(data[0]);
       setBltStockP(data[1]);
       setBltStockDiv(data[2]);
     });
 
     cpaStockData1().then((data) => {
-      console.log('cpa request 1 made');
       setCpaStockNr(data[0]);
       setCpaStockYnr(data[1]);
     });
     cpaStockData2().then((data) => {
-      console.log('cpa request 2 made');
       setCpaStockOp(data[0]);
       setCpaStockP(data[1]);
       setCpaStockDiv(data[2]);
     });
 
     eegStockData1().then((data) => {
-      console.log('eeg request 1 made');
       setEegStockNr(data[0]);
       setEegStockYnr(data[1]);
     });
     eegStockData2().then((data) => {
-      console.log('eeg request 2 made');
       setEegStockOp(data[0]);
       setEegStockP(data[1]);
       setEegStockDiv(data[2]);
     });
 
     tpdStockData1().then((data) => {
-      console.log('tpd request 1 made');
       setTpdStockNr(data[0]);
       setTpdStockYnr(data[1]);
     });
     tpdStockData2().then((data) => {
-      console.log('tpd request 2 made');
       setTpdStockOp(data[0]);
       setTpdStockP(data[1]);
       setTpdStockDiv(data[2]);
     });
 
     haeStockData1().then((data) => {
-      console.log('hae request 1 made');
       setHaeStockNr(data[0]);
       setHaeStockYnr(data[1]);
     });
     haeStockData2().then((data) => {
-      console.log('hae request 2 made');
       setHaeStockOp(data[0]);
       setHaeStockP(data[1]);
       setHaeStockDiv(data[2]);
     });
 
     sknStockData1().then((data) => {
-      console.log('skn request 1 made');
       setSknStockNr(data[0]);
       setSknStockYnr(data[1]);
     });
     sknStockData2().then((data) => {
-      console.log('skn request 2 made');
       setSknStockOp(data[0]);
       setSknStockP(data[1]);
       setSknStockDiv(data[2]);
     });
 
     pkgStockData1().then((data) => {
-      console.log('pkg request 1 made');
       setPkgStockNr(data[0]);
       setPkgStockYnr(data[1]);
     });
     pkgStockData2().then((data) => {
-      console.log('pkg request 2 made');
       setPkgStockOp(data[0]);
       setPkgStockP(data[1]);
       setPkgStockDiv(data[2]);
     });
 
     prfStockData1().then((data) => {
-      console.log('prf request 1 made');
       setPrfStockNr(data[0]);
       setPrfStockYnr(data[1]);
     });
     prfStockData2().then((data) => {
-      console.log('prf request 2 made');
       setPrfStockOp(data[0]);
       setPrfStockP(data[1]);
       setPrfStockDiv(data[2]);
     });
 
     sfgStockData1().then((data) => {
-      console.log('sfg request 1 made');
       setSfgStockNr(data[0]);
       setSfgStockYnr(data[1]);
     });
     sfgStockData2().then((data) => {
-      console.log('sfg request 2 made');
       setSfgStockOp(data[0]);
       setSfgStockP(data[1]);
       setSfgStockDiv(data[2]);
     });
 
     tveStockData1().then((data) => {
-      console.log('tve request 1 made');
       setTveStockNr(data[0]);
       setTveStockYnr(data[1]);
     });
     tveStockData2().then((data) => {
-      console.log('tve request 2 made');
       setTveStockOp(data[0]);
       setTveStockP(data[1]);
       setTveStockDiv(data[2]);
     });
 
     mrkStockData1().then((data) => {
-      console.log('mrk request 1 made');
       setMrkStockNr(data[0]);
       setMrkStockYnr(data[1]);
     });
     mrkStockData2().then((data) => {
-      console.log('mrk request 1 made');
       setMrkStockOp(data[0]);
       setMrkStockP(data[1]);
       setMrkStockDiv(data[2]);
     });
 
     lhvStockData1().then((data) => {
-      console.log('lhv request 1 made');
       setlhvStockNr(data[0]);
       setLhvStockYnr(data[1]);
     });
     lhvStockData2().then((data) => {
-      console.log('lhv request 1 made');
       setlhvStockOp(data[0]);
       setlhvStockP(data[1]);
       setLhvStockDiv(data[2]);
     });
 
     talStockData1().then((data) => {
-      console.log('tal request 1 made');
       setTalStockNr(data[0]);
       setTalStockYnr(data[1]);
     });
     talStockData2().then((data) => {
-      console.log('tal request 2 made');
       setTalStockOp(data[0]);
       setTalStockP(data[1]);
       setTalStockDiv(data[2]);
     });
 
     tkmStockData1().then((data) => {
-      console.log('tkm request 1 made');
       setTkmStockNr(data[0]);
       setTkmStockYnr(data[1]);
     });
     tkmStockData2().then((data) => {
-      console.log('tkm request 2 made');
       setTkmStockOp(data[0]);
       setTkmStockP(data[1]);
       setTkmStockDiv(data[2]);
     });
 
     tsmStockData1().then((data) => {
-      console.log('tsm request 1 made');
       setTsmStockNr(data[0]);
       setTsmStockYnr(data[1]);
     });
     tsmStockData2().then((data) => {
-      console.log('tsm request 2 made');
       setTsmStockOp(data[0]);
       setTsmStockP(data[1]);
       setTsmStockDiv(data[2]);
     });
 
     ncnStockData1().then((data) => {
-      console.log('ncn request 1 made');
       setNcnStockNr(data[0]);
       setNcnStockYnr(data[1]);
     });
     ncnStockData2().then((data) => {
-      console.log('ncn request 2 made');
       setNcnStockOp(data[0]);
       setNcnStockP(data[1]);
       setNcnStockDiv(data[2]);
     });
 
     OmxStockData().then((data) => {
-      console.log('omx request 1 made');
       setOmxStockOp(data[0]);
       setOmxStockP(data[1]);
       setOmxStockPrevClose(data[2]);
       setOmxTime(data[3]);
     });
   }, []);
+
+  /* 
+  Creates a seperate object for each stock
+*/
 
   const lhv = {
     volume: lhvStockNr,
@@ -505,6 +483,10 @@ export const HULL = () => {
     time: omxTime,
   };
 
+  /* 
+    Cretes an array composed of stocks(objects)
+  */
+
   const stocks = [
     arc,
     blt,
@@ -525,8 +507,10 @@ export const HULL = () => {
     tve,
   ];
 
-  const timer = () => setCount(count - 1);
-  const timeToComplete = () => setSeconds(seconds + 1);
+  /* 
+    Confirmes that all the webrequests are finished by checking that none of the values are undefined, if they are, checks again. 
+    If the webrequests are finished sets isScraping at false  
+  */
 
   useEffect(() => {
     if (!isScraping || count <= -10) return;
@@ -541,9 +525,16 @@ export const HULL = () => {
       currentState = 'Looping...';
     }
     console.log('Is scraping: ', isScraping);
-    const id2 = setInterval(timer, 1000);
+    const id2 = setInterval(() => {
+      setCount(count - 1);
+    }, 1000);
     return () => clearInterval(id2);
   }, [count]);
+
+  /*
+   Loops through each stock and converts its values from improperly formalized strings into numbers
+   Also changes the values of divindeds that are N/A into 0s, so the Index can be calculated properly 
+  */
 
   function noNa() {
     for (var i = 0; i < stocks.length; i++) {
@@ -564,6 +555,28 @@ export const HULL = () => {
     currentState = 'Calculating...';
     return;
   }
+
+  if (!isScraping) {
+    noNa();
+  }
+
+  /* 
+    function that captures the calculation's completion time
+  */
+
+  useEffect(() => {
+    secInterval = setInterval(() => {
+      setSeconds(seconds + 1);
+    }, 100);
+    return () => {
+      clearInterval(secInterval);
+    };
+  }, [seconds]);
+
+  /* 
+    Function that calculates how much the Index's price has fluctuated
+    Will be executed after the calculations are finished
+  */
 
   function valueChange() {
     differnce =
@@ -589,9 +602,9 @@ export const HULL = () => {
           ')';
   }
 
-  if (!isScraping) {
-    noNa();
-  }
+  /* 
+    Index calcultion
+  */
 
   if (!isScraping && !isLooping) {
     omxIndexSummation = stocks.reduce(function(accumulator, currentStock) {
@@ -608,15 +621,6 @@ export const HULL = () => {
     isDivising = false;
   }
 
-  useEffect(() => {
-    secInterval = setInterval(() => {
-      setSeconds(seconds + 1);
-    }, 100);
-    return () => {
-      clearInterval(secInterval);
-    };
-  }, [seconds]);
-
   if (
     !isScraping &&
     !isDivising &&
@@ -631,6 +635,8 @@ export const HULL = () => {
 
     isCalculating = false;
     currentState = omxIndex.toFixed(2);
+
+    // Checks how accurately has the index been calculated (Compared to the official value)
     calAccuracy = (
       100 -
       (Math.abs(omxIndex - parseFloat(omx.price.replace(',', ''))) * 100) /
@@ -681,7 +687,7 @@ export const HULL = () => {
             </h3>
           </div>
           <div className='calcDet'>
-            <h3 className='tekst5 justifyStart'>Pages visited</h3>
+            <h3 className='tekst5 justifyStart'>Webpages visited</h3>
             <h3 className='tekst5 justifyEnd'>
               <b>{typeof calAccuracy === 'string' ? 52 : ''}</b>
             </h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Equation } from './Equation';
+import { Equation } from '../Equation';
 
 export const EquationUsed = () => {
   return (
