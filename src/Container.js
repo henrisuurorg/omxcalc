@@ -21,6 +21,7 @@ import './Style.css';
 import { Instrument } from './Instruments';
 import { EquationUsed } from './EquationUsed';
 import { Sources } from './Sources';
+import { type } from 'os';
 
 let isScraping = true;
 let isLooping = true;
@@ -34,6 +35,7 @@ let omxIndexSummation;
 let valChange;
 let differnce;
 let calAccuracy;
+let secInterval;
 
 export const HULL = () => {
   const [lhvStockNr, setlhvStockNr] = useState();
@@ -558,7 +560,7 @@ export const HULL = () => {
       }
     }
     isLooping = false;
-    console.log('stocks afer changing:', stocks);
+    console.log('Stocks:', stocks);
     currentState = 'Calculating...';
     return;
   }
@@ -567,9 +569,6 @@ export const HULL = () => {
     differnce =
       parseFloat(omx.previousClose.replace(',', '')) -
       parseFloat(omx.price.replace(',', ''));
-
-    console.log('test', parseFloat(omx.price.replace(',', '')));
-    console.log('differnce', differnce);
     const difInPercent =
       (differnce / parseFloat(omx.previousClose.replace(',', ''))) * 100;
     valChange =
@@ -609,6 +608,15 @@ export const HULL = () => {
     isDivising = false;
   }
 
+  useEffect(() => {
+    secInterval = setInterval(() => {
+      setSeconds(seconds + 1);
+    }, 100);
+    return () => {
+      clearInterval(secInterval);
+    };
+  }, [seconds]);
+
   if (
     !isScraping &&
     !isDivising &&
@@ -628,16 +636,8 @@ export const HULL = () => {
       (Math.abs(omxIndex - parseFloat(omx.price.replace(',', ''))) * 100) /
         parseFloat(omx.price.replace(',', ''))
     ).toFixed(2);
+    clearInterval(secInterval);
   }
-
-  useEffect(() => {
-    if (!isCalculating || isDone) return;
-    let id1 = setInterval(timeToComplete, 100);
-    return () => {
-      clearInterval(id1);
-      isDone = true;
-    };
-  }, [seconds]);
 
   return (
     <div className='container'>
@@ -665,25 +665,25 @@ export const HULL = () => {
           <div className='calcDet'>
             <h3 className='tekst5 justifyStart'>Accuracy</h3>
             <h3 className='tekst5 justifyEnd'>
-              <b>{calAccuracy}%</b>
+              <b>{typeof calAccuracy === 'string' ? calAccuracy + '%' : ''}</b>
             </h3>
           </div>
           <div className='calcDet'>
             <h3 className='tekst5 justifyStart'>Time to complete</h3>
             <h3 className='tekst5 justifyEnd'>
-              <b>{seconds / 10}s</b>
+              <b>{typeof calAccuracy === 'string' ? seconds / 10 + 's' : ''}</b>
             </h3>
           </div>
           <div className='calcDet'>
             <h3 className='tekst5 justifyStart'>Operations</h3>
             <h3 className='tekst5 justifyEnd'>
-              <b>93</b>
+              <b>{typeof calAccuracy === 'string' ? 97 : ''} </b>
             </h3>
           </div>
           <div className='calcDet'>
             <h3 className='tekst5 justifyStart'>Pages visited</h3>
             <h3 className='tekst5 justifyEnd'>
-              <b>52</b>
+              <b>{typeof calAccuracy === 'string' ? 52 : ''}</b>
             </h3>
           </div>
         </div>
@@ -694,5 +694,3 @@ export const HULL = () => {
     </div>
   );
 };
-
-/* <h3 className='teks6'>Parameters used:</h3> */

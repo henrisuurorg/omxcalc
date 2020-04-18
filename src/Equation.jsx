@@ -97,266 +97,266 @@ export const Equation = () => {
       <g
         stroke='currentColor'
         fill='currentColor'
-        stroke-width='0'
+        strokeWidth='0'
         transform='matrix(1 0 0 -1 0 0)'
       >
-        <g data-mml-node='math'>
-          <g data-mml-node='mi'>
+        <g dataMmlNode='math'>
+          <g dataMmlNode='mi'>
             <use xlinkHref='#MJX-4-TEX-I-4F'></use>
           </g>
-          <g data-mml-node='mi' transform='translate(763, 0)'>
+          <g dataMmlNode='mi' transform='translate(763, 0)'>
             <use xlinkHref='#MJX-4-TEX-I-4D'></use>
           </g>
-          <g data-mml-node='mi' transform='translate(1814, 0)'>
+          <g dataMmlNode='mi' transform='translate(1814, 0)'>
             <use xlinkHref='#MJX-4-TEX-I-58'></use>
           </g>
-          <g data-mml-node='msub' transform='translate(2642, 0)'>
-            <g data-mml-node='mi'>
+          <g dataMmlNode='msub' transform='translate(2642, 0)'>
+            <g dataMmlNode='mi'>
               <use xlinkHref='#MJX-4-TEX-I-54'></use>
             </g>
             <g
-              data-mml-node='TeXAtom'
+              dataMmlNode='TeXAtom'
               transform='translate(584, -150) scale(0.707)'
             >
-              <g data-mml-node='mi'>
+              <g dataMmlNode='mi'>
                 <use xlinkHref='#MJX-4-TEX-I-74'></use>
               </g>
             </g>
           </g>
-          <g data-mml-node='mo' transform='translate(3809, 0)'>
+          <g dataMmlNode='mo' transform='translate(3809, 0)'>
             <use xlinkHref='#MJX-4-TEX-N-3D'></use>
           </g>
-          <g data-mml-node='mfrac' transform='translate(4864.8, 0)'>
-            <g data-mml-node='mrow' transform='translate(2520.8, 803.3)'>
-              <g data-mml-node='munderover'>
-                <g data-mml-node='mo'>
+          <g dataMmlNode='mfrac' transform='translate(4864.8, 0)'>
+            <g dataMmlNode='mrow' transform='translate(2520.8, 803.3)'>
+              <g dataMmlNode='munderover'>
+                <g dataMmlNode='mo'>
                   <use xlinkHref='#MJX-4-TEX-SO-2211'></use>
                 </g>
                 <g
-                  data-mml-node='TeXAtom'
+                  dataMmlNode='TeXAtom'
                   transform='translate(1056, 477.1) scale(0.707)'
                 >
-                  <g data-mml-node='mi'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-6E'></use>
                   </g>
                 </g>
                 <g
-                  data-mml-node='TeXAtom'
+                  dataMmlNode='TeXAtom'
                   transform='translate(1056, -285.4) scale(0.707)'
                 >
-                  <g data-mml-node='mi'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-69'></use>
                   </g>
-                  <g data-mml-node='mo' transform='translate(345, 0)'>
+                  <g dataMmlNode='mo' transform='translate(345, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-3D'></use>
                   </g>
-                  <g data-mml-node='mn' transform='translate(1123, 0)'>
+                  <g dataMmlNode='mn' transform='translate(1123, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-31'></use>
                   </g>
                 </g>
               </g>
-              <g data-mml-node='mrow' transform='translate(2253.6, 0)'>
-                <g data-mml-node='mo'>
+              <g dataMmlNode='mrow' transform='translate(2253.6, 0)'>
+                <g dataMmlNode='mo'>
                   <use xlinkHref='#MJX-4-TEX-N-28'></use>
                 </g>
-                <g data-mml-node='msub' transform='translate(389, 0)'>
-                  <g data-mml-node='mi'>
+                <g dataMmlNode='msub' transform='translate(389, 0)'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-71'></use>
                   </g>
                   <g
-                    data-mml-node='TeXAtom'
+                    dataMmlNode='TeXAtom'
                     transform='translate(446, -150) scale(0.707)'
                   >
-                    <g data-mml-node='mi'>
+                    <g dataMmlNode='mi'>
                       <use xlinkHref='#MJX-4-TEX-I-69'></use>
                     </g>
-                    <g data-mml-node='mo' transform='translate(345, 0)'>
+                    <g dataMmlNode='mo' transform='translate(345, 0)'>
                       <use xlinkHref='#MJX-4-TEX-N-2C'></use>
                     </g>
-                    <g data-mml-node='mi' transform='translate(623, 0)'>
+                    <g dataMmlNode='mi' transform='translate(623, 0)'>
                       <use xlinkHref='#MJX-4-TEX-I-74'></use>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node='mo' transform='translate(1803, 0)'>
+                <g dataMmlNode='mo' transform='translate(1803, 0)'>
                   <use xlinkHref='#MJX-4-TEX-N-D7'></use>
                 </g>
-                <g data-mml-node='msub' transform='translate(2803.2, 0)'>
-                  <g data-mml-node='mi'>
+                <g dataMmlNode='msub' transform='translate(2803.2, 0)'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-70'></use>
                   </g>
                   <g
-                    data-mml-node='TeXAtom'
+                    dataMmlNode='TeXAtom'
                     transform='translate(503, -150) scale(0.707)'
                   >
-                    <g data-mml-node='mi'>
+                    <g dataMmlNode='mi'>
                       <use xlinkHref='#MJX-4-TEX-I-69'></use>
                     </g>
-                    <g data-mml-node='mo' transform='translate(345, 0)'>
+                    <g dataMmlNode='mo' transform='translate(345, 0)'>
                       <use xlinkHref='#MJX-4-TEX-N-2C'></use>
                     </g>
-                    <g data-mml-node='mi' transform='translate(623, 0)'>
+                    <g dataMmlNode='mi' transform='translate(623, 0)'>
                       <use xlinkHref='#MJX-4-TEX-I-74'></use>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node='mtext' transform='translate(4052, 0)'>
+                <g dataMmlNode='mtext' transform='translate(4052, 0)'>
                   <use xlinkHref='#MJX-4-TEX-N-A0'></use>
                 </g>
-                <g data-mml-node='mo' transform='translate(4302, 0)'>
+                <g dataMmlNode='mo' transform='translate(4302, 0)'>
                   <use xlinkHref='#MJX-4-TEX-N-29'></use>
                 </g>
               </g>
             </g>
-            <g data-mml-node='mrow' transform='translate(220, -749.6)'>
-              <g data-mml-node='munderover'>
-                <g data-mml-node='mo'>
+            <g dataMmlNode='mrow' transform='translate(220, -749.6)'>
+              <g dataMmlNode='munderover'>
+                <g dataMmlNode='mo'>
                   <use xlinkHref='#MJX-4-TEX-SO-2211'></use>
                 </g>
                 <g
-                  data-mml-node='TeXAtom'
+                  dataMmlNode='TeXAtom'
                   transform='translate(1056, 477.1) scale(0.707)'
                 >
-                  <g data-mml-node='mi'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-6E'></use>
                   </g>
                 </g>
                 <g
-                  data-mml-node='TeXAtom'
+                  dataMmlNode='TeXAtom'
                   transform='translate(1056, -285.4) scale(0.707)'
                 >
-                  <g data-mml-node='mi'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-69'></use>
                   </g>
-                  <g data-mml-node='mo' transform='translate(345, 0)'>
+                  <g dataMmlNode='mo' transform='translate(345, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-3D'></use>
                   </g>
-                  <g data-mml-node='mn' transform='translate(1123, 0)'>
+                  <g dataMmlNode='mn' transform='translate(1123, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-31'></use>
                   </g>
                 </g>
               </g>
-              <g data-mml-node='mrow' transform='translate(2253.6, 0)'>
-                <g data-mml-node='mo'>
+              <g dataMmlNode='mrow' transform='translate(2253.6, 0)'>
+                <g dataMmlNode='mo'>
                   <use xlinkHref='#MJX-4-TEX-N-5B'></use>
                 </g>
-                <g data-mml-node='msub' transform='translate(278, 0)'>
-                  <g data-mml-node='mi'>
+                <g dataMmlNode='msub' transform='translate(278, 0)'>
+                  <g dataMmlNode='mi'>
                     <use xlinkHref='#MJX-4-TEX-I-71'></use>
                   </g>
                   <g
-                    data-mml-node='TeXAtom'
+                    dataMmlNode='TeXAtom'
                     transform='translate(446, -150) scale(0.707)'
                   >
-                    <g data-mml-node='mi'>
+                    <g dataMmlNode='mi'>
                       <use xlinkHref='#MJX-4-TEX-I-69'></use>
                     </g>
-                    <g data-mml-node='mo' transform='translate(345, 0)'>
+                    <g dataMmlNode='mo' transform='translate(345, 0)'>
                       <use xlinkHref='#MJX-4-TEX-N-2C'></use>
                     </g>
-                    <g data-mml-node='mi' transform='translate(623, 0)'>
+                    <g dataMmlNode='mi' transform='translate(623, 0)'>
                       <use xlinkHref='#MJX-4-TEX-I-74'></use>
                     </g>
-                    <g data-mml-node='mo' transform='translate(984, 0)'>
+                    <g dataMmlNode='mo' transform='translate(984, 0)'>
                       <use xlinkHref='#MJX-4-TEX-N-2212'></use>
                     </g>
-                    <g data-mml-node='mn' transform='translate(1762, 0)'>
+                    <g dataMmlNode='mn' transform='translate(1762, 0)'>
                       <use xlinkHref='#MJX-4-TEX-N-31'></use>
                     </g>
                   </g>
                 </g>
-                <g data-mml-node='mo' transform='translate(2595.7, 0)'>
+                <g dataMmlNode='mo' transform='translate(2595.7, 0)'>
                   <use xlinkHref='#MJX-4-TEX-N-D7'></use>
                 </g>
-                <g data-mml-node='mrow' transform='translate(3595.9, 0)'>
-                  <g data-mml-node='mo'>
+                <g dataMmlNode='mrow' transform='translate(3595.9, 0)'>
+                  <g dataMmlNode='mo'>
                     <use xlinkHref='#MJX-4-TEX-N-28'></use>
                   </g>
-                  <g data-mml-node='msub' transform='translate(389, 0)'>
-                    <g data-mml-node='mi'>
+                  <g dataMmlNode='msub' transform='translate(389, 0)'>
+                    <g dataMmlNode='mi'>
                       <use xlinkHref='#MJX-4-TEX-I-70'></use>
                     </g>
                     <g
-                      data-mml-node='TeXAtom'
+                      dataMmlNode='TeXAtom'
                       transform='translate(503, -150) scale(0.707)'
                     >
-                      <g data-mml-node='mi'>
+                      <g dataMmlNode='mi'>
                         <use xlinkHref='#MJX-4-TEX-I-69'></use>
                       </g>
-                      <g data-mml-node='mo' transform='translate(345, 0)'>
+                      <g dataMmlNode='mo' transform='translate(345, 0)'>
                         <use xlinkHref='#MJX-4-TEX-N-2C'></use>
                       </g>
-                      <g data-mml-node='mi' transform='translate(623, 0)'>
+                      <g dataMmlNode='mi' transform='translate(623, 0)'>
                         <use xlinkHref='#MJX-4-TEX-I-74'></use>
                       </g>
-                      <g data-mml-node='mo' transform='translate(984, 0)'>
+                      <g dataMmlNode='mo' transform='translate(984, 0)'>
                         <use xlinkHref='#MJX-4-TEX-N-2212'></use>
                       </g>
-                      <g data-mml-node='mn' transform='translate(1762, 0)'>
+                      <g dataMmlNode='mn' transform='translate(1762, 0)'>
                         <use xlinkHref='#MJX-4-TEX-N-31'></use>
                       </g>
                     </g>
                   </g>
-                  <g data-mml-node='mo' transform='translate(2763.7, 0)'>
+                  <g dataMmlNode='mo' transform='translate(2763.7, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-D7'></use>
                   </g>
-                  <g data-mml-node='msub' transform='translate(3763.9, 0)'>
-                    <g data-mml-node='mi'>
+                  <g dataMmlNode='msub' transform='translate(3763.9, 0)'>
+                    <g dataMmlNode='mi'>
                       <use xlinkHref='#MJX-4-TEX-I-64'></use>
                     </g>
                     <g
-                      data-mml-node='TeXAtom'
+                      dataMmlNode='TeXAtom'
                       transform='translate(520, -150) scale(0.707)'
                     >
-                      <g data-mml-node='mi'>
+                      <g dataMmlNode='mi'>
                         <use xlinkHref='#MJX-4-TEX-I-69'></use>
                       </g>
-                      <g data-mml-node='mo' transform='translate(345, 0)'>
+                      <g dataMmlNode='mo' transform='translate(345, 0)'>
                         <use xlinkHref='#MJX-4-TEX-N-2C'></use>
                       </g>
-                      <g data-mml-node='mi' transform='translate(623, 0)'>
+                      <g dataMmlNode='mi' transform='translate(623, 0)'>
                         <use xlinkHref='#MJX-4-TEX-I-74'></use>
                       </g>
                     </g>
                   </g>
-                  <g data-mml-node='mo' transform='translate(5029.7, 0)'>
+                  <g dataMmlNode='mo' transform='translate(5029.7, 0)'>
                     <use xlinkHref='#MJX-4-TEX-N-29'></use>
                   </g>
                 </g>
-                <g data-mml-node='mo' transform='translate(9014.6, 0)'>
+                <g dataMmlNode='mo' transform='translate(9014.6, 0)'>
                   <use xlinkHref='#MJX-4-TEX-N-5D'></use>
                 </g>
               </g>
             </g>
             <rect width='11746.3' height='60' x='120' y='220'></rect>
           </g>
-          <g data-mml-node='mo' transform='translate(17073.3, 0)'>
+          <g dataMmlNode='mo' transform='translate(17073.3, 0)'>
             <use xlinkHref='#MJX-4-TEX-N-D7'></use>
           </g>
-          <g data-mml-node='mi' transform='translate(18073.5, 0)'>
+          <g dataMmlNode='mi' transform='translate(18073.5, 0)'>
             <use xlinkHref='#MJX-4-TEX-I-4F'></use>
           </g>
-          <g data-mml-node='mi' transform='translate(18836.5, 0)'>
+          <g dataMmlNode='mi' transform='translate(18836.5, 0)'>
             <use xlinkHref='#MJX-4-TEX-I-4D'></use>
           </g>
-          <g data-mml-node='mi' transform='translate(19887.5, 0)'>
+          <g dataMmlNode='mi' transform='translate(19887.5, 0)'>
             <use xlinkHref='#MJX-4-TEX-I-58'></use>
           </g>
-          <g data-mml-node='msub' transform='translate(20715.5, 0)'>
-            <g data-mml-node='mi'>
+          <g dataMmlNode='msub' transform='translate(20715.5, 0)'>
+            <g dataMmlNode='mi'>
               <use xlinkHref='#MJX-4-TEX-I-54'></use>
             </g>
             <g
-              data-mml-node='TeXAtom'
+              dataMmlNode='TeXAtom'
               transform='translate(584, -150) scale(0.707)'
             >
-              <g data-mml-node='mi'>
+              <g dataMmlNode='mi'>
                 <use xlinkHref='#MJX-4-TEX-I-74'></use>
               </g>
-              <g data-mml-node='mo' transform='translate(361, 0)'>
+              <g dataMmlNode='mo' transform='translate(361, 0)'>
                 <use xlinkHref='#MJX-4-TEX-N-2212'></use>
               </g>
-              <g data-mml-node='mn' transform='translate(1139, 0)'>
+              <g dataMmlNode='mn' transform='translate(1139, 0)'>
                 <use xlinkHref='#MJX-4-TEX-N-31'></use>
               </g>
             </g>
