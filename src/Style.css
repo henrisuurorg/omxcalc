@@ -132,19 +132,24 @@ body {
 .EquationUsed {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-columns: auto;
   margin: 2rem;
   padding: 2rem 3rem;
   background-color: #3d5af1;
   border-radius: 3%;
-  justify-content: flex-start;
+}
+
+.EquationUsed > h2 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
 }
 
 .equation {
   color: #e2f3f5;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
 }
 
 .parameter {
@@ -157,8 +162,9 @@ body {
 }
 
 .parameters {
-  margin-top: 2rem;
-  margin-bottom: 0;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  align-self: end;
 }
 
 .Instruments {
@@ -185,14 +191,13 @@ a:hover {
 .Sources {
   grid-row: 3 / 4;
   grid-column: 1 / 2;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-columns: auto;
   margin: 2rem;
   padding: 2rem 3rem;
   background-color: #3d5af1;
   border-radius: 3%;
-  justify-content: flex-start;
-  align-content: space-between;
 }
 
 .source {
@@ -202,6 +207,7 @@ a:hover {
 }
 
 .sourceList {
+  align-content: space-between;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
@@ -212,99 +218,31 @@ a:hover {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    /* padding: 1rem 1rem; */
   }
 
-  /*   .tekst1 {
-    margin-top: 0.33rem;
-    margin-bottom: 0.2506rem;
-    font-size: 1.6746rem;
-  } */
-  /* 
-  .tekst2 {
-    margin: 0.5rem 0;
-    font-size: 1.67466rem;
-  }
- */
-  /* .tekst3 {
-    font-size: 0.5rem;
-  }
- */
   .IndexVal {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-    /*     margin: 1rem;
-    padding: 1rem 1rem;
-    border-radius: 3%; */
   }
-  /* 
-  .roheline {
-    margin: 0.250rem 0.1rem;
-    font-size: 0.9rem;
-  }
- */
-  /*   .punane {
-    margin-top: 0.250rem;
-    margin-bottom: 0.250rem;
-    font-size: 0.9rem;
-  }
- */
   .CalculationDetails {
-    /*     margin: 1rem;
-    padding: 1rem 1rem; */
     grid-row: 2 / 3;
     grid-column: 1 / 2;
-    /*     border-radius: 3%; */
   }
-  /* 
-  .tekst5 {
-    margin: 0.266rem 0;
-    font-size: 0.850rem;
-  }
- */
-  /*   .tekst4 {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-  } */
 
   .EquationUsed {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
-    /*     margin: 1rem;
-    padding: 1rem 1rem; */
   }
-
-  /*   .equation {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
- */
-  /*   .parameter {
-    margin: 0.250rem 0;
-    font-size: 0.850rem;
-  }
- */
-  /*   .parameters {
-    margin-top: 1rem;
-  } */
 
   .Instruments {
     grid-row: 4 / 5;
     grid-column: 1 / 2;
-    /*     margin: 1rem;
-    padding: 1rem 1rem; */
   }
 
   .Sources {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
-    /*     margin: 1rem;
-    padding: 1rem 1rem; */
   }
-  /*   .equation {
-    width: 15rem;
-    height: 1.7911rem;
-  } */
 }
 
 @media only screen and (max-width: 830px) {
