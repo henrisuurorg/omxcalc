@@ -588,14 +588,14 @@ export const CalculationContainer = () => {
       differnce >= 0
         ? '-' +
           Math.abs(differnce.toFixed(2)) +
-          '(' +
+          ' (' +
           '-' +
           Math.abs(difInPercent.toFixed(2)) +
           '%' +
           ')'
         : '+' +
           Math.abs(differnce.toFixed(2)) +
-          '(' +
+          ' (' +
           '+' +
           Math.abs(difInPercent.toFixed(2)) +
           '%' +
