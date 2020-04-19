@@ -154,7 +154,7 @@ export const CalculationContainer = () => {
   const [seconds, setSeconds] = useState(0);
 
   /* 
-    Makes requests with axios and sets the gathered data as state 
+    Fetches data with axios and sets the gathered data as state 
   */
 
   useEffect(() => {
