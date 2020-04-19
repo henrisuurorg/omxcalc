@@ -1,3 +1,7 @@
+# OMX Tallinn_GI (^OMXT) Index Calculator
+
+A React web application that calculates the value of OMX Tallinn_G stock index using data that it scrapes from Yahoo Finance.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
