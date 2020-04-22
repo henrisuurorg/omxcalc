@@ -586,24 +586,16 @@ export const CalculationContainer = () => {
       (differnce / parseFloat(omx.previousClose.replace(',', ''))) * 100;
     valChange =
       differnce >= 0
-        ? '-' +
-          Math.abs(differnce.toFixed(2)) +
-          ' (' +
-          '-' +
-          Math.abs(difInPercent.toFixed(2)) +
-          '%' +
-          ')'
-        : '+' +
-          Math.abs(differnce.toFixed(2)) +
-          ' (' +
-          '+' +
-          Math.abs(difInPercent.toFixed(2)) +
-          '%' +
-          ')';
+        ? `-${Math.abs(differnce.toFixed(2))} (-${Math.abs(
+            difInPercent.toFixed(2)
+          )}%)`
+        : `+${Math.abs(differnce.toFixed(2))} (+${Math.abs(
+            difInPercent.toFixed(2)
+          )}%)`;
   }
 
   /* 
-    Index calcultion
+    Index calcultion `+${Math.abs(differnce.toFixed(2))}(+${Math.abs(difInPercent.toFixed(2))}%)`
   */
 
   if (!isScraping && !isLooping) {
