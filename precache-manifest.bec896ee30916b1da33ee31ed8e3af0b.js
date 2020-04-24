@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4dbea25fed5aa7709aaaf87bd72dd34a",
+    "revision": "5bf15a773811d1b07d67a23439613859",
     "url": "/OMX-TALLINN-INDEX/index.html"
   },
   {

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/OMX-TALLINN-INDEX/precache-manifest.8a20289e1c5a868df6b4008c017b3dc1.js"
+  "/OMX-TALLINN-INDEX/precache-manifest.bec896ee30916b1da33ee31ed8e3af0b.js"
 );
 
 self.addEventListener('message', (event) => {
