@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/OMX-TALLINN-INDEX/static/css/main.a62468db.chunk.css",
+    "main.js": "/OMX-TALLINN-INDEX/static/js/main.0b0e303c.chunk.js",
+    "main.js.map": "/OMX-TALLINN-INDEX/static/js/main.0b0e303c.chunk.js.map",
+    "runtime-main.js": "/OMX-TALLINN-INDEX/static/js/runtime-main.c4c3604b.js",
+    "runtime-main.js.map": "/OMX-TALLINN-INDEX/static/js/runtime-main.c4c3604b.js.map",
+    "static/js/2.7a0ff84e.chunk.js": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js",
+    "static/js/2.7a0ff84e.chunk.js.map": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js.map",
+    "index.html": "/OMX-TALLINN-INDEX/index.html",
+    "precache-manifest.8a20289e1c5a868df6b4008c017b3dc1.js": "/OMX-TALLINN-INDEX/precache-manifest.8a20289e1c5a868df6b4008c017b3dc1.js",
+    "service-worker.js": "/OMX-TALLINN-INDEX/service-worker.js",
+    "static/css/main.a62468db.chunk.css.map": "/OMX-TALLINN-INDEX/static/css/main.a62468db.chunk.css.map",
+    "static/js/2.7a0ff84e.chunk.js.LICENSE.txt": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4c3604b.js",
+    "static/js/2.7a0ff84e.chunk.js",
+    "static/css/main.a62468db.chunk.css",
+    "static/js/main.0b0e303c.chunk.js"
+  ]
+}
