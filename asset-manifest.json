@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/OMX-TALLINN-INDEX/static/css/main.a62468db.chunk.css",
-    "main.js": "/OMX-TALLINN-INDEX/static/js/main.0b0e303c.chunk.js",
-    "main.js.map": "/OMX-TALLINN-INDEX/static/js/main.0b0e303c.chunk.js.map",
-    "runtime-main.js": "/OMX-TALLINN-INDEX/static/js/runtime-main.c4c3604b.js",
-    "runtime-main.js.map": "/OMX-TALLINN-INDEX/static/js/runtime-main.c4c3604b.js.map",
-    "static/js/2.7a0ff84e.chunk.js": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js",
-    "static/js/2.7a0ff84e.chunk.js.map": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js.map",
-    "index.html": "/OMX-TALLINN-INDEX/index.html",
-    "precache-manifest.bec896ee30916b1da33ee31ed8e3af0b.js": "/OMX-TALLINN-INDEX/precache-manifest.bec896ee30916b1da33ee31ed8e3af0b.js",
-    "service-worker.js": "/OMX-TALLINN-INDEX/service-worker.js",
-    "static/css/main.a62468db.chunk.css.map": "/OMX-TALLINN-INDEX/static/css/main.a62468db.chunk.css.map",
-    "static/js/2.7a0ff84e.chunk.js.LICENSE.txt": "/OMX-TALLINN-INDEX/static/js/2.7a0ff84e.chunk.js.LICENSE.txt"
+    "main.css": "/OMX-Tallinn-Index-Calculator/static/css/main.a62468db.chunk.css",
+    "main.js": "/OMX-Tallinn-Index-Calculator/static/js/main.5fe32f03.chunk.js",
+    "main.js.map": "/OMX-Tallinn-Index-Calculator/static/js/main.5fe32f03.chunk.js.map",
+    "runtime-main.js": "/OMX-Tallinn-Index-Calculator/static/js/runtime-main.5713ccbe.js",
+    "runtime-main.js.map": "/OMX-Tallinn-Index-Calculator/static/js/runtime-main.5713ccbe.js.map",
+    "static/js/2.ebf43bf9.chunk.js": "/OMX-Tallinn-Index-Calculator/static/js/2.ebf43bf9.chunk.js",
+    "static/js/2.ebf43bf9.chunk.js.map": "/OMX-Tallinn-Index-Calculator/static/js/2.ebf43bf9.chunk.js.map",
+    "index.html": "/OMX-Tallinn-Index-Calculator/index.html",
+    "precache-manifest.ea9d6bcf662360ec90cd4efc921723a2.js": "/OMX-Tallinn-Index-Calculator/precache-manifest.ea9d6bcf662360ec90cd4efc921723a2.js",
+    "service-worker.js": "/OMX-Tallinn-Index-Calculator/service-worker.js",
+    "static/css/main.a62468db.chunk.css.map": "/OMX-Tallinn-Index-Calculator/static/css/main.a62468db.chunk.css.map",
+    "static/js/2.ebf43bf9.chunk.js.LICENSE.txt": "/OMX-Tallinn-Index-Calculator/static/js/2.ebf43bf9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c4c3604b.js",
-    "static/js/2.7a0ff84e.chunk.js",
+    "static/js/runtime-main.5713ccbe.js",
+    "static/js/2.ebf43bf9.chunk.js",
     "static/css/main.a62468db.chunk.css",
-    "static/js/main.0b0e303c.chunk.js"
+    "static/js/main.5fe32f03.chunk.js"
   ]
 }
