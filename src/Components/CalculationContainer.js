@@ -617,7 +617,7 @@ export const CalculationContainer = () => {
     !isScraping &&
     !isDivising &&
     !isLooping &&
-    omxStockPrevClose != undefined
+    omxStockPrevClose !== undefined
   ) {
     omxIndex =
       ((omxIndexSummation / omxIndexDivisor) *
