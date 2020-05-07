@@ -6,5 +6,3 @@ The OMX Tallinn_GI (^OMXT) is the main stock market index in Estonia. It reflect
 
 ![](Header.png)
 
-### [Visit page](https://henrisuurorg.github.io/OMX-TALLINN-INDEX/ "OMX Tallinn_GI (^OMXT) Index Calculator")
-
